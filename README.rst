@@ -1,5 +1,9 @@
 
-avinit - Generate avatars using name initials
+======
+avinit
+======
+
+Generate avatars using name initials
 
 Avinit gets the first letter of the first and last word of a given text and generates a SVG avatar from it. Avinit it's also capable to generate a data link so the avatar can be sent directly in the URL.
 
