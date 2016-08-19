@@ -90,4 +90,4 @@ def get_svg_avatar(text, **kwargs):
 def get_avatar_data_url(text, **kwargs):
     svg_avatar = get_svg_avatar(text, **kwargs)
     b64_avatar = b64encode(svg_avatar.encode('utf-8'))
-    return b'data:image/svg+xml;base64,' + b64_avatar
+    return 'data:image/svg+xml;base64,' + b64_avatar.decode('utf-8')

@@ -4,7 +4,7 @@ from distutils.core import setup
 
 setup(
     name='avinit',
-    version='1.0',
+    version='1.0.1',
     description='Generate avatars using name initials',
     author='Sergio Oliveira',
     author_email='seocam@seocam.com',
