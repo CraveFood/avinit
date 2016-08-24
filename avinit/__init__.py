@@ -35,20 +35,24 @@ SVG_TEMPLATE = """
 SVG_TEMPLATE = re.sub('(\s+|\n)', ' ', SVG_TEMPLATE)
 
 
-COLORS = ["#1abc9c", "#16a085", "#f1c40f", "#f39c12", "#2ecc71", "#27ae60",
-          "#e67e22", "#d35400", "#3498db", "#2980b9", "#e74c3c", "#c0392b",
-          "#9b59b6", "#8e44ad", "#bdc3c7", "#34495e", "#2c3e50", "#95a5a6",
-          "#7f8c8d", "#ec87bf", "#d870ad", "#f69785", "#9ba37e", "#b49255",
-          "#b49255", "#a94136"]
+DEFAULT_COLORS = [
+    "#1abc9c", "#16a085", "#f1c40f", "#f39c12", "#2ecc71", "#27ae60",
+    "#e67e22", "#d35400", "#3498db", "#2980b9", "#e74c3c", "#c0392b",
+    "#9b59b6", "#8e44ad", "#bdc3c7", "#34495e", "#2c3e50", "#95a5a6",
+    "#7f8c8d", "#ec87bf", "#d870ad", "#f69785", "#9ba37e", "#b49255",
+    "#b49255", "#a94136",
+]
 
 
 def _from_dict_to_style(style_dict):
     return '; '.join(['{}: {}'.format(k, v) for k, v in style_dict.items()])
 
 
-def _get_color(text):
-    color_index = sum(map(ord, text)) % len(COLORS)
-    return COLORS[color_index]
+def _get_color(text, colors=None):
+    if not colors:
+        colors = DEFAULT_COLORS
+    color_index = sum(map(ord, text)) % len(colors)
+    return colors[color_index]
 
 
 def get_svg_avatar(text, **kwargs):
@@ -65,7 +69,7 @@ def get_svg_avatar(text, **kwargs):
     opts.update(kwargs)
 
     style = {
-        'background-color': _get_color(text),
+        'background-color': _get_color(text, opts.get('colors')),
         'width': opts.get('width') + 'px',
         'height': opts.get('height') + 'px',
         'border-radius': opts.get('radius') + 'px',

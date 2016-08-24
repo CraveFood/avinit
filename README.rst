@@ -34,3 +34,11 @@ Usage
   In [4]: avinit.get_avatar_data_url('seocam')
   Out[4]: b'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHBvaW50ZXItZXZlbnRzPSJub25lIiB3aWR0aD0iNDYiIGhlaWdodD0iNDYiIHN0eWxlPSJiYWNrZ3JvdW5kLWNvbG9yOiAjMzQ5OGRiOyAtbW96LWJvcmRlci1yYWRpdXM6IDBweDsgd2lkdGg6IDQ2cHg7IGhlaWdodDogNDZweDsgYm9yZGVyLXJhZGl1czogMHB4Ij4gPHRleHQgdGV4dC1hbmNob3I9Im1pZGRsZSIgeT0iNTAlIiB4PSI1MCUiIGR5PSIwLjM1ZW0iIHBvaW50ZXItZXZlbnRzPSJhdXRvIiBmaWxsPSIjZmZmZmZmIiBmb250LWZhbWlseT0iSGVsdmV0aWNhTmV1ZS1MaWdodCxIZWx2ZXRpY2EgTmV1ZSBMaWdodCxIZWx2ZXRpY2EgTmV1ZSxIZWx2ZXRpY2EsQXJpYWwsTHVjaWRhIEdyYW5kZSxzYW5zLXNlcmlmIiBzdHlsZT0iZm9udC13ZWlnaHQ6IDQwMDsgZm9udC1zaXplOiAyMHB4Ij5TPC90ZXh0PiA8L3N2Zz4='
 
+
+To choose the avatar colors you can send a list with the hex color codes:
+
+.. code-block::
+  
+  colors = ['#000', '#111', '#222']
+  avinit.get_svg_avatar('Hello Word', colors=colors)
+  
