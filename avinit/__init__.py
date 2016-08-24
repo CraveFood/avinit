@@ -58,6 +58,8 @@ def _get_color(text, colors=None):
 def get_svg_avatar(text, **kwargs):
 
     initials = '=)'
+
+    text = text.strip()
     if text:
         split_text = text.split(' ')
         if len(split_text) > 1:
