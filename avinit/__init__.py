@@ -25,8 +25,9 @@ DEFAULT_SETTINGS = {
 }
 
 SVG_TEMPLATE = """
-<svg xmlns="http://www.w3.org/2000/svg" pointer-events="none" width="{width}"
-     height="{height}" style="{style}">
+<svg xmlns="http://www.w3.org/2000/svg" pointer-events="none"
+     width="{width}" height="{height}">
+  <rect width="{width}" height="{height}" style="{style}"></rect>
   <text text-anchor="middle" y="50%" x="50%" dy="0.35em"
         pointer-events="auto" fill="#ffffff" font-family="{font-family}"
         style="{text-style}">{text}</text>
@@ -71,7 +72,7 @@ def get_svg_avatar(text, **kwargs):
     opts.update(kwargs)
 
     style = {
-        'background-color': _get_color(text, opts.get('colors')),
+        'fill': _get_color(text, opts.get('colors')),
         'width': opts.get('width') + 'px',
         'height': opts.get('height') + 'px',
         'border-radius': opts.get('radius') + 'px',
