@@ -18,6 +18,14 @@ Installation
   pip install avinit
 
 
+If you need PNG support you will also need to install `CairoSVG`.
+This can be accomplished by:
+
+.. code-block::
+
+  pip install avinit[png]
+
+
 Usage
 =====
 
@@ -38,7 +46,13 @@ Usage
 To choose the avatar colors you can send a list with the hex color codes:
 
 .. code-block::
-  
+
   colors = ['#000', '#111', '#222']
   avinit.get_svg_avatar('Hello Word', colors=colors)
-  
+
+
+There is also support to generate PNG avatars (if installed with support):
+
+.. code-block::
+
+  avinit.get_png_avatar('Hello Word', output_file='/tmp/test.png')
