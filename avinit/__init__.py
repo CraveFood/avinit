@@ -4,6 +4,11 @@ import re
 
 from base64 import b64encode
 
+try:
+    import cairosvg
+except ImportError:
+    cairosvg = None
+
 
 DEFAULT_FONTS = [
     'HelveticaNeue-Light',
@@ -16,11 +21,11 @@ DEFAULT_FONTS = [
 ]
 
 DEFAULT_SETTINGS = {
-    'width': '46',
-    'height': '46',
+    'width': '200',
+    'height': '200',
     'radius': '0',
     'font-family': ','.join(DEFAULT_FONTS),
-    'font-size': '20',
+    'font-size': '80',
     'font-weight': '400',
 }
 
@@ -92,6 +97,14 @@ def get_svg_avatar(text, **kwargs):
         'text-style': _from_dict_to_style(text_style),
         'text': initials.upper(),
     }).replace('\n', '')
+
+
+def get_png_avatar(text, output_file, **kwargs):
+    if not cairosvg:
+        raise Exception('CairoSVG is required to png conversions.')
+
+    svg_avatar = get_svg_avatar(text, **kwargs)
+    cairosvg.svg2png(svg_avatar, write_to=output_file)
 
 
 def get_avatar_data_url(text, **kwargs):

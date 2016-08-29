@@ -4,12 +4,15 @@ from distutils.core import setup
 
 setup(
     name='avinit',
-    version='1.1.0',
+    version='1.2.0',
     description='Generate avatars using name initials',
     author='Sergio Oliveira',
     author_email='seocam@seocam.com',
     url='https://github.com/CraveFood/avinit',
     packages=['avinit'],
+    extras_require={
+        'png': ['CairoSVG>=1.0,<2.0.0']
+    },
     classifiers=[
         'Development Status :: 5 - Production/Stable',
         'Environment :: Console',
