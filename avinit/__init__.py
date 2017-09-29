@@ -3,6 +3,7 @@
 import re
 
 from base64 import b64encode
+from xml.sax.saxutils import escape as xml_escape
 
 try:
     import cairosvg
@@ -95,7 +96,7 @@ def get_svg_avatar(text, **kwargs):
         'style': _from_dict_to_style(style),
         'font-family': opts.get('font-family'),
         'text-style': _from_dict_to_style(text_style),
-        'text': initials.upper(),
+        'text': xml_escape(initials.upper()),
     }).replace('\n', '')
 
 
