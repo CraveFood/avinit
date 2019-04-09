@@ -11,7 +11,7 @@ setup(
     url='https://github.com/CraveFood/avinit',
     packages=['avinit'],
     extras_require={
-        'png': ['CairoSVG>=1.0,<2.0.0']
+        'png': ['CairoSVG>=1.0,<2.0.0', 'cairocffi<1.0.2']
     },
     classifiers=[
         'Development Status :: 5 - Production/Stable',
