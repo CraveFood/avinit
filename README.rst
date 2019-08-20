@@ -29,7 +29,7 @@ This can be accomplished by:
 Usage
 =====
 
-.. code-block::
+.. code-block:: python
 
   In [1]: import avinit
 
@@ -45,7 +45,7 @@ Usage
 
 To choose the avatar colors you can send a list with the hex color codes:
 
-.. code-block::
+.. code-block:: python
 
   colors = ['#000', '#111', '#222']
   avinit.get_svg_avatar('Hello Word', colors=colors)
@@ -53,6 +53,13 @@ To choose the avatar colors you can send a list with the hex color codes:
 
 There is also support to generate PNG avatars (if installed with support):
 
-.. code-block::
+.. code-block:: python
 
   avinit.get_png_avatar('Hello Word', output_file='/tmp/test.png')
+
+
+If you need to add radius to your avatars you can use the radius parameter:
+
+.. code-block:: python
+
+  avinit.get_svg_avatar('Hello Word', radius=15)

@@ -79,12 +79,6 @@ def get_svg_avatar(text, **kwargs):
 
     style = {
         'fill': _get_color(text, opts.get('colors')),
-        'width': opts.get('width') + 'px',
-        'height': opts.get('height') + 'px',
-        # fixme: are these needed at all? {{{
-        'border-radius': opts.get('radius') + 'px',
-        '-moz-border-radius': opts.get('radius') + 'px',
-        # }}}
     }
 
     text_style = {
